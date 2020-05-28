@@ -1,13 +1,20 @@
 {
-  "pages": ["pages/index/index"],
+  "pages": ["pages/myTicket/myTicket"],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#00897B",
-    "navigationBarTitleText": "乘车码",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#006400",
+    "navigationBarTitleText": "公交商务快线",
+    "navigationBarTitleFontSize": "16px",
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
+  "disableScroll": true,
   "usingComponents": {
-    "van-button": "./miniprogram_npm/vant-weapp/button/index.js"
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-icon": "@vant/weapp/icon/index"
   }
 }

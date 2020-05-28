@@ -1,0 +1,28 @@
+<scroll-view class="myTicket">
+    <view class="header">
+        <view class="tab">
+            <van-row class="tab">
+                <van-col span="6" offset="3">
+                    <text bindtap="onClickTicket" class="{{_tapSort==1?'tabActive':''}}">我的车票</text>
+                </van-col>
+                <van-col span="6" offset="6">
+                    <text bindtap="onClickMonth" class="{{_tapSort==2?'tabActive':''}}">本月线路</text>
+                </van-col>
+            </van-row>
+        </view>
+    </view>
+    <view class="workTime" bindtap="onClickChoseWorkTime">
+        <view class="worlTimeItem">
+            <van-image class="bag" width="25" height="22" src="/assets/bag.png" />
+            <text class="workTimeText">{{workTimeText}}</text>
+            <van-icon name="arrow" class="workTimeArrow" color="#006400" />
+        </view>
+    </view>
+</scroll-view>
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelectTime" title="选择上班时间" />
+<van-toast id="van-toast" />
+<!-- <view class="myTicket">
+    <image src="/assets/img.jpeg" style="height:{{height}}px;width:{{width}}px" />
+    <view class="time">{{time}}</view>
+    <view class="QRcode" />
+</view> -->

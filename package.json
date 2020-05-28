@@ -4,6 +4,7 @@
   "description": "仿公交上午快线小程序",
   "main": "app.js",
   "dependencies": {
+    "@vant/weapp": "^1.3.1",
     "vant-weapp": "^0.5.28"
   },
   "devDependencies": {},

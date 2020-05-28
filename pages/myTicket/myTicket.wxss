@@ -1,0 +1,72 @@
+/**index.wxss**/
+.myTicket {
+  background-color: #eeeef0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.header {
+  background-color: #006400;
+  width: 100vw;
+  height: 50rpx;
+  padding: 10rpx;
+}
+.tab {
+  text-align: center;
+  font-size: 26rpx;
+  color: #eaeaea;
+  font-weight: 200;
+}
+.tabActive {
+  color: #ffffff;
+  font-weight: 350;
+  background-color: #003300;
+  width: 70rpx;
+  padding: 4rpx 20rpx;
+  line-height: 30rpx;
+  border-radius: 20rpx;
+}
+.workTime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.worlTimeItem {
+  height: 100rpx;
+  width: 94%;
+  background-color: #ffffff;
+  border-style: solid;
+  border-color: #006400;
+  border-width: 2rpx;
+  border-radius: 12rpx;
+  display: flex;
+  align-items: center;
+}
+.bag {
+  margin-left: 16rpx;
+}
+.workTimeText {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  margin-bottom: 8rpx;
+  margin-left: 50rpx;
+}
+.workTimeArrow {
+  margin-bottom: 8rpx;
+  margin-left: 60rpx;
+}
+.time {
+  position: absolute;
+  text-align: center;
+  top: 197rpx;
+  left: 127rpx;
+  background-color: #ffffff;
+  padding: 0px 10px;
+  z-index: 10;
+  font-size: 1rem;
+  width: 375rpx;
+  height: 38rpx;
+  border-radius: 20rpx;
+}
