@@ -1,0 +1,23 @@
+{
+  "name": "bus",
+  "version": "1.0.0",
+  "description": "仿公交上午快线小程序",
+  "main": "app.js",
+  "dependencies": {
+    "vant-weapp": "^0.5.28"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/66-Benny/Mini-Progrom.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/66-Benny/Mini-Progrom/issues"
+  },
+  "homepage": "https://github.com/66-Benny/Mini-Progrom#readme"
+}

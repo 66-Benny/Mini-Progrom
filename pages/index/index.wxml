@@ -1,1 +1,3 @@
-<swiper style="height:{{height}}px"></swiper>
+<view class="">
+    <van-button type="primary">按钮</van-button>
+</view>
