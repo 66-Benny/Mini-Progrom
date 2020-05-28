@@ -1,3 +1,9 @@
 .DS_Store
 node_modules/
 miniprogram_npm/
+package-lock.json
+npm-debug.log
+lerna-debug.log
+npm-debug.log.*
+lerna-debug.log.*
+.vscode
