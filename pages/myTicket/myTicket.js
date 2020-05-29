@@ -27,6 +27,26 @@ Page({
         index: 1,
       },
     ],
+    tickesArr: [
+      {
+        icon: '月票',
+        title: '19号线锦绣',
+        fromA: '锦绣',
+        fromB: 'IBM',
+        month: '',
+        hours: '',
+        id: 1,
+      },
+      {
+        icon: '月票',
+        title: '19号线锦绣',
+        fromA: '',
+        fromB: '',
+        month: '',
+        hours: '',
+        id: 2,
+      },
+    ],
   },
 
   /**
@@ -39,6 +59,7 @@ Page({
    */
   onReady: function () {
     this.getTime()
+    this.getMonth()
   },
 
   /**
@@ -106,12 +127,27 @@ Page({
   },
   onSelectTime: function (event) {
     var that = this
-    this.setData({
-      workTimeText: that.data.workTimeTextArr[event.detail.index],
-    })
+    this.data.tickesArr.forEach((val, index) =>
+      this.setData({
+        workTimeText: that.data.workTimeTextArr[event.detail.index],
+        [`tickesArr[${index}].hours`]: that.data.actions[event.detail.index]
+          .name,
+      })
+    )
     Toast({
       message: '已修改上班时间',
       position: 'bottom',
     })
+  },
+  getMonth() {
+    var that = this
+    this.data.tickesArr.forEach((val, index) =>
+      this.setData({
+        [`tickesArr[${index}].month`]: util.formatNumber(
+          new Date().getMonth() + 1
+        ),
+        [`tickesArr[${index}].hours`]: that.data.actions[0].name,
+      })
+    )
   },
 })

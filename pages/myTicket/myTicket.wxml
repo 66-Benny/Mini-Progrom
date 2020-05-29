@@ -1,15 +1,13 @@
-<scroll-view class="myTicket">
-    <view class="header">
-        <view class="tab">
-            <van-row class="tab">
-                <van-col span="6" offset="3">
-                    <text bindtap="onClickTicket" class="{{_tapSort==1?'tabActive':''}}">我的车票</text>
-                </van-col>
-                <van-col span="6" offset="6">
-                    <text bindtap="onClickMonth" class="{{_tapSort==2?'tabActive':''}}">本月线路</text>
-                </van-col>
-            </van-row>
-        </view>
+<view class="header">
+    <view class="tab">
+        <van-row class="tab">
+            <van-col span="6" offset="3">
+                <text bindtap="onClickTicket" class="{{_tapSort==1?'tabActive':''}}">我的车票</text>
+            </van-col>
+            <van-col span="6" offset="6">
+                <text bindtap="onClickMonth" class="{{_tapSort==2?'tabActive':''}}">本月线路</text>
+            </van-col>
+        </van-row>
     </view>
     <view class="workTime" bindtap="onClickChoseWorkTime">
         <view class="worlTimeItem">
@@ -18,9 +16,42 @@
             <van-icon name="arrow" class="workTimeArrow" color="#006400" />
         </view>
     </view>
-</scroll-view>
+</view>
+<view class="main">
+    <scroll-view class='main-scroll' scroll-y style="height: 100%">
+        <view class='main-list' wx:if="{{_tapSort==1}}">
+            <view class="main-ticket" wx:for="{{tickesArr}}" wx:key="id">
+                <text class="icon">{{item.icon}}</text>
+                <text>{{item.title}}{{tools.sub(item.hours,1,2)}}点 ---- {{item.hours}}</text>
+                <hr />
+                <text>乘车月份：{{item.month}}</text>
+            </view>
+            <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}">
+                <view slot="left">选择</view>
+                <van-cell-group>
+                    <van-cell title="单元格" value="内容" />
+                </van-cell-group>
+                <view slot="right">删除</view>
+            </van-swipe-cell>
+        </view>
+        <view class='main-list' wx:if="{{_tapSort==2}}">
+            <view class="main-line"></view>
+        </view>
+    </scroll-view>
+</view>
+<view class="fixedButton">
+    <button class="QRcode button">
+        <van-icon name="qr" class="qr" />
+        乘车码
+    </button>
+    <button class="BuyTicket button">
+        <van-icon name="coupon-o" class="coupon" />
+        购票
+    </button>
+</view>
 <van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelectTime" title="选择上班时间" />
 <van-toast id="van-toast" />
+<wxs src="../../wxs/subutil.wxs" module="tools" />
 <!-- <view class="myTicket">
     <image src="/assets/img.jpeg" style="height:{{height}}px;width:{{width}}px" />
     <view class="time">{{time}}</view>

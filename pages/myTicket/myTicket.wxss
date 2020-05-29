@@ -1,22 +1,13 @@
-/**index.wxss**/
-.myTicket {
-  background-color: #eeeef0;
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
 .header {
-  background-color: #006400;
-  width: 100vw;
-  height: 50rpx;
-  padding: 10rpx;
+  background-color: #eeeef0;
 }
 .tab {
+  background-color: #006400;
   text-align: center;
   font-size: 26rpx;
   color: #eaeaea;
   font-weight: 200;
+  padding: 5rpx 0 15rpx 0;
 }
 .tabActive {
   color: #ffffff;
@@ -57,16 +48,85 @@
   margin-bottom: 8rpx;
   margin-left: 60rpx;
 }
-.time {
+.main {
+  background-color: #eeeef0;
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+.main-scroll {
   position: absolute;
-  text-align: center;
-  top: 197rpx;
-  left: 127rpx;
+  top: 0;
+  bottom: 0;
+  width: 94%;
+}
+.main-ticket {
   background-color: #ffffff;
-  padding: 0px 10px;
-  z-index: 10;
-  font-size: 1rem;
-  width: 375rpx;
-  height: 38rpx;
-  border-radius: 20rpx;
+  height: 200rpx;
+  position: relative;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+}
+.main-ticket::before {
+  content: ' ';
+  width: 30rpx;
+  height: 20rpx;
+  border-radius: 40%;
+  background-color: #eaeaea;
+  position: absolute;
+  left: -20rpx;
+  top: 60%;
+}
+.main-ticket::after {
+  content: ' ';
+  width: 30rpx;
+  height: 20rpx;
+  border-radius: 40%;
+  background-color: #eaeaea;
+  position: absolute;
+  right: -20rpx;
+  top: 60%;
+}
+hr {
+  position: absolute;
+  top: 64%;
+  border: 1rpx solid #eaeaea;
+  width: 90%;
+  left: 5%;
+}
+.fixedButton {
+  background-color: transparent;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+}
+.button {
+  width: 250rpx;
+  border-radius: 50rpx;
+  display: inline-block;
+  font-size: 36rpx;
+  color: #eaeaea;
+  font-weight: 300;
+}
+.QRcode {
+  background-color: #006400;
+}
+.BuyTicket {
+  background-color: #cc7b38;
+}
+.qr {
+  position: relative;
+  top: 5rpx;
+}
+.coupon {
+  position: relative;
+  top: 5rpx;
+  transform: rotate(130deg);
+  margin-right: 8rpx;
 }

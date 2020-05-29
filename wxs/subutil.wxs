@@ -1,0 +1,8 @@
+var sub = function (val, start, end) {
+  if (val.length == 0 || val == undefined) {
+    return
+  } else {
+    return val.substring(start, end)
+  }
+}
+module.exports.sub = sub

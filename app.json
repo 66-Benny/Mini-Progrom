@@ -4,7 +4,6 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#006400",
     "navigationBarTitleText": "公交商务快线",
-    "navigationBarTitleFontSize": "16px",
     "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
@@ -14,6 +13,7 @@
     "van-image": "@vant/weapp/image/index",
     "van-action-sheet": "@vant/weapp/action-sheet/index",
     "van-toast": "@vant/weapp/toast/index",
-    "van-icon": "@vant/weapp/icon/index"
+    "van-icon": "@vant/weapp/icon/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index"
   }
 }
