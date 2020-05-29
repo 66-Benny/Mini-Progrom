@@ -35,36 +35,41 @@ Page({
         fromB: 'IBM',
         month: '',
         hours: '',
+        id: 0,
+      },
+      {
+        icon: '月票',
+        title: '1号线锦绣',
+        fromA: '',
+        fromB: '',
+        month: '',
+        hours: '',
         id: 1,
       },
       {
         icon: '月票',
-        title: '19号线锦绣',
+        title: '2号线锦绣',
         fromA: '',
         fromB: '',
         month: '',
         hours: '',
         id: 2,
       },
+      {
+        icon: '月票',
+        title: '3号线锦绣',
+        fromA: '',
+        fromB: '',
+        month: '',
+        hours: '',
+        id: 3,
+      },
     ],
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {},
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
     this.getTime()
     this.getMonth()
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
     let height = wx.getSystemInfoSync().windowHeight * 2
     let width = wx.getSystemInfoSync().windowWidth * 2
@@ -81,30 +86,6 @@ Page({
       })
     }, 1000)
   },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {},
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {},
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {},
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {},
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {},
   onClickTicket: function () {
     this.setData({
       _tapSort: 1,
@@ -150,4 +131,16 @@ Page({
       })
     )
   },
+  onClose(event) {
+    const { instance } = event.detail;
+    instance.close();
+  },
+  onClickClose(event){
+    const index = event.currentTarget.dataset.idx;    
+    this.data.tickesArr.splice(index,1);
+    const tickesArrSplice = this.data.tickesArr
+    this.setData({
+      tickesArr: tickesArrSplice
+    })
+  }
 })
