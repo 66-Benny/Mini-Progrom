@@ -20,20 +20,19 @@
 <view class="main">
     <scroll-view class='main-scroll' scroll-y style="height: 100%">
         <view class='main-list' wx:if="{{_tapSort==1}}">
-            <van-swipe-cell
-                right-width="{{ 65 }}"
-                async-close
-                bind:close="onClose"
-                wx:for="{{tickesArr}}" 
-                wx:key="id"
-                wx:for-index="idx">
+            <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose" wx:for="{{tickesArr}}" wx:key="id" wx:for-index="idx">
+                <view slot="left" class="swipe-left" bindtap="onClickSelect" data-idx="{{idx}}">
+                    选中
+                </view>
                 <view class="main-ticket">
                     <text class="icon">{{item.icon}}</text>
                     <text>{{item.title}}{{tools.sub(item.hours,1,2)}}点 ---- {{item.hours}}</text>
                     <hr />
                     <text>乘车月份：{{item.month}}</text>
                 </view>
-                <view slot="right" class="swipe-right" bindtap="onClickClose" data-idx="{{idx}}">删除</view>
+                <view slot="right" class="swipe-right" bindtap="onClickClose" data-idx="{{idx}}">
+                    删除
+                </view>
             </van-swipe-cell>
         </view>
         <view class='main-list' wx:if="{{_tapSort==2}}">

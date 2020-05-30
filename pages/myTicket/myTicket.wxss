@@ -71,7 +71,7 @@
   border-radius: 10rpx;
 }
 .main-ticket::before {
-  content: ' ';
+  content: " ";
   width: 30rpx;
   height: 20rpx;
   border-radius: 40%;
@@ -81,7 +81,7 @@
   top: 60%;
 }
 .main-ticket::after {
-  content: ' ';
+  content: " ";
   width: 30rpx;
   height: 20rpx;
   border-radius: 40%;
@@ -90,11 +90,11 @@
   right: -20rpx;
   top: 60%;
 }
-.swipe-right{
+.swipe-left,
+.swipe-right {
   text-align: center;
   top: 25%;
-position: relative;
-
+  position: relative;
 }
 hr {
   position: absolute;
@@ -102,6 +102,17 @@ hr {
   border: 1rpx solid #eaeaea;
   width: 90%;
   left: 5%;
+}
+.van-swipe-cell__left {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #1d953f;
+  z-index: 10;
 }
 .van-swipe-cell__right {
   display: inline-block;

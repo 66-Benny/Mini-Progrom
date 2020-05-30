@@ -142,5 +142,13 @@ Page({
     this.setData({
       tickesArr: tickesArrSplice
     })
-  }
+  },
+  onClickSelect(event){
+    const index = event.currentTarget.dataset.idx;    
+    this.data.tickesArr.splice(index,1);
+    const tickesArrSplice = this.data.tickesArr
+    this.setData({
+      tickesArr: tickesArrSplice
+    })
+  },
 })
