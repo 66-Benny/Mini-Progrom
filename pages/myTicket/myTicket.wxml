@@ -1,3 +1,13 @@
+<wxs module="tools">
+var sub = function (val, start, end) {
+  if (val.length == 0 || val == undefined) {
+    return
+  } else {
+    return val.substring(start, end)
+  }
+}
+module.exports.sub = sub
+</wxs>
 <view class="header">
     <view class="tab">
         <van-row class="tab">
@@ -20,23 +30,38 @@
 <view class="main">
     <scroll-view class='main-scroll' scroll-y style="height: 100%">
         <view class='main-list' wx:if="{{_tapSort==1}}">
-            <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose" wx:for="{{tickesArr}}" wx:key="id" wx:for-index="idx">
-                <view slot="left" class="swipe-left" bindtap="onClickSelect" data-idx="{{idx}}">
-                    选中
-                </view>
+            <van-swipe-cell>
                 <view class="main-ticket">
-                    <text class="icon">{{item.icon}}</text>
-                    <text>{{item.title}}{{tools.sub(item.hours,1,2)}}点 ---- {{item.hours}}</text>
+                    <viex class="ticketIcon">{{tickesArr.icon}}</viex>
+                    <text class="ticketDesc">
+                        {{tickesArr.title}}{{tools.sub(tickesArr.hours,1,2)}}点
+                    </text>
+                    <van-icon name="arrow" class="ticketArrow"/>
+                    <view class="ticketTime">
+                        {{tickesArr.fromA}}
+                        <van-icon name="exchange" />
+                        {{tickesArr.fromB}} - {{tickesArr.hours}}
+                    </view>
                     <hr />
-                    <text>乘车月份：{{item.month}}</text>
-                </view>
-                <view slot="right" class="swipe-right" bindtap="onClickClose" data-idx="{{idx}}">
-                    删除
+                    <view class="ticketMonth">乘车月份：{{tickesArr.month}}月</view>
                 </view>
             </van-swipe-cell>
         </view>
         <view class='main-list' wx:if="{{_tapSort==2}}">
-            <view class="main-line"></view>
+            <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose" wx:for="{{linesArr}}" wx:key="id" wx:for-index="idx">
+                <!-- <view slot="left" class="swipe-left" bindtap="onClickSelect" data-idx="{{idx}}">
+                    选中
+                </view> -->
+                <view class="main-ticket">
+                    <text class="icon">{{item.icon}}</text>
+                    <text class="lineDesc">{{item.title}}--{{tools.sub(item.hours,1,2)}}点</text>
+                    <hr />
+                    <text>乘车月份：{{item.month}}</text>
+                </view>
+                <view slot="right" class="swipe-right" bindtap="onClickSelect" data-idx="{{idx}}">
+                    添加车票
+                </view>
+            </van-swipe-cell>
         </view>
     </scroll-view>
 </view>
@@ -52,7 +77,6 @@
 </view>
 <van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelectTime" title="选择上班时间" />
 <van-toast id="van-toast" />
-<wxs src="../../wxs/subutil.wxs" module="tools" />
 <!-- <view class="myTicket">
     <image src="/assets/img.jpeg" style="height:{{height}}px;width:{{width}}px" />
     <view class="time">{{time}}</view>

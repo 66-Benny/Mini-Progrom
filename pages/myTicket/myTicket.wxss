@@ -71,7 +71,7 @@
   border-radius: 10rpx;
 }
 .main-ticket::before {
-  content: " ";
+  content: ' ';
   width: 30rpx;
   height: 20rpx;
   border-radius: 40%;
@@ -81,7 +81,7 @@
   top: 60%;
 }
 .main-ticket::after {
-  content: " ";
+  content: ' ';
   width: 30rpx;
   height: 20rpx;
   border-radius: 40%;
@@ -103,7 +103,7 @@ hr {
   width: 90%;
   left: 5%;
 }
-.van-swipe-cell__left {
+/* .van-swipe-cell__left {
   display: inline-block;
   width: 65px;
   height: 44px;
@@ -113,7 +113,7 @@ hr {
   text-align: center;
   background-color: #1d953f;
   z-index: 10;
-}
+} */
 .van-swipe-cell__right {
   display: inline-block;
   width: 65px;
@@ -122,7 +122,7 @@ hr {
   line-height: 44px;
   color: #fff;
   text-align: center;
-  background-color: #f44;
+  background-color: #1d953f;
 }
 .fixedButton {
   background-color: transparent;
@@ -132,6 +132,45 @@ hr {
   bottom: 100rpx;
   width: 100%;
   line-height: 100rpx;
+}
+.ticketIcon {
+  font-weight: 300;
+  color: #fff;
+  font-size: 24rpx;
+  background-color: #f39c12;
+  padding: 0rpx 8rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin: 12rpx 10rpx 10rpx 0;
+  margin-left: 5%;
+}
+.ticketDesc {
+  display: inline-block;
+  font-size: 24rpx;
+  font-weight: 300;
+  color: #424949;
+}
+.ticketTime {
+  margin-left: 5%;
+  font-size: 28rpx;
+}
+.van-icon-exchange {
+  color: #3498db;
+}
+.ticketMonth {
+  color: #424949;
+  font-weight: 300;
+  font-size: 24rpx;
+  margin-left: 5%;
+  margin-top: 25rpx;
+  display: inline-block;
+}
+.ticketArrow {
+  color: #eaeaea;
+  float: right;
+  font-weight: 300;
+  margin-right: 10%;
+  margin-top: 7%;
 }
 .button {
   width: 250rpx;

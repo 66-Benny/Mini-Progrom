@@ -27,45 +27,19 @@ Page({
         index: 1,
       },
     ],
-    tickesArr: [
-      {
-        icon: '月票',
-        title: '19号线锦绣',
-        fromA: '锦绣',
-        fromB: 'IBM',
-        month: '',
-        hours: '',
-        id: 0,
-      },
-      {
-        icon: '月票',
-        title: '1号线锦绣',
-        fromA: '',
-        fromB: '',
-        month: '',
-        hours: '',
-        id: 1,
-      },
-      {
-        icon: '月票',
-        title: '2号线锦绣',
-        fromA: '',
-        fromB: '',
-        month: '',
-        hours: '',
-        id: 2,
-      },
-      {
-        icon: '月票',
-        title: '3号线锦绣',
-        fromA: '',
-        fromB: '',
-        month: '',
-        hours: '',
-        id: 3,
-      },
-    ],
+    tickesArr: {
+      icon: '月票',
+      title: '19号线锦绣',
+      fromA: '锦绣',
+      fromB: 'IBM',
+      month: '',
+      hours: '08:00',
+    },
+    linesArr: [],
   },
+  // PANDA:1159062999014a5acb70
+  // PANDA:115906296473a446431d
+  // PANDA:115909684963a446431d
   onReady: function () {
     this.getTime()
     this.getMonth()
@@ -107,48 +81,43 @@ Page({
     })
   },
   onSelectTime: function (event) {
-    var that = this
-    this.data.tickesArr.forEach((val, index) =>
-      this.setData({
-        workTimeText: that.data.workTimeTextArr[event.detail.index],
-        [`tickesArr[${index}].hours`]: that.data.actions[event.detail.index]
-          .name,
-      })
-    )
+    this.setData({
+      workTimeText: this.data.workTimeTextArr[event.detail.index],
+      [`tickesArr.hours`]: this.data.actions[event.detail.index].name,
+    })
     Toast({
       message: '已修改上班时间',
       position: 'bottom',
     })
   },
   getMonth() {
-    var that = this
-    this.data.tickesArr.forEach((val, index) =>
-      this.setData({
-        [`tickesArr[${index}].month`]: util.formatNumber(
-          new Date().getMonth() + 1
-        ),
-        [`tickesArr[${index}].hours`]: that.data.actions[0].name,
-      })
-    )
+    this.setData({
+      [`tickesArr.month`]: util.formatNumber(new Date().getMonth() + 1),
+    })
+    // var that = this
+    // this.data.linesArr.forEach((val, index) =>
+    //   this.setData({
+    //     [`linesArr[${index}].month`]: util.formatNumber(
+    //       new Date().getMonth() + 1
+    //     ),
+    //     [`linesArr[${index}].hours`]: that.data.actions[0].name,
+    //   })
+    // )
   },
-  onClose(event) {
-    const { instance } = event.detail;
-    instance.close();
-  },
-  onClickClose(event){
-    const index = event.currentTarget.dataset.idx;    
-    this.data.tickesArr.splice(index,1);
+  onClickClose(event) {
+    const index = event.currentTarget.dataset.idx
+    this.data.tickesArr.splice(index, 1)
     const tickesArrSplice = this.data.tickesArr
     this.setData({
-      tickesArr: tickesArrSplice
+      tickesArr: tickesArrSplice,
     })
   },
-  onClickSelect(event){
-    const index = event.currentTarget.dataset.idx;    
-    this.data.tickesArr.splice(index,1);
+  onClickSelect(event) {
+    const index = event.currentTarget.dataset.idx
+    this.data.tickesArr.splice(index, 1)
     const tickesArrSplice = this.data.tickesArr
     this.setData({
-      tickesArr: tickesArrSplice
+      tickesArr: tickesArrSplice,
     })
   },
 })
