@@ -48,7 +48,7 @@ module.exports.sub = sub
             </van-swipe-cell>
         </view>
         <view class='main-list' wx:if="{{_tapSort==2}}">
-            <van-swipe-cell right-width="{{ 85 }}" wx:for="{{linesArr}}" wx:key="id" wx:for-index="idx">
+            <van-swipe-cell right-width="{{ 65 }}" wx:for="{{linesArr}}" wx:key="id" wx:for-index="idx">
                 <view class="main-lines">
                     <van-image class="bus" width="30" height="25" src="/assets/bus.png" />
                     <text class="linesTitle">{{item.title}}{{tools.sub(item.hours,1,2)}}点</text>
