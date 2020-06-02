@@ -36,7 +36,7 @@ module.exports.sub = sub
                     <text class="ticketDesc">
                         {{tickesArr.title}}{{tools.sub(tickesArr.hours,1,2)}}点
                     </text>
-                    <van-icon name="arrow" class="ticketArrow"/>
+                    <van-icon name="arrow" class="ticketArrow" />
                     <view class="ticketTime">
                         {{tickesArr.fromA}}
                         <van-icon name="exchange" />
@@ -48,18 +48,28 @@ module.exports.sub = sub
             </van-swipe-cell>
         </view>
         <view class='main-list' wx:if="{{_tapSort==2}}">
-            <van-swipe-cell right-width="{{ 65 }}" left-width="{{ 65 }}" async-close bind:close="onClose" wx:for="{{linesArr}}" wx:key="id" wx:for-index="idx">
-                <!-- <view slot="left" class="swipe-left" bindtap="onClickSelect" data-idx="{{idx}}">
-                    选中
-                </view> -->
-                <view class="main-ticket">
-                    <text class="icon">{{item.icon}}</text>
-                    <text class="lineDesc">{{item.title}}--{{tools.sub(item.hours,1,2)}}点</text>
-                    <hr />
-                    <text>乘车月份：{{item.month}}</text>
+            <van-swipe-cell right-width="{{ 85 }}" wx:for="{{linesArr}}" wx:key="id" wx:for-index="idx">
+                <view class="main-lines">
+                    <van-image class="bus" width="30" height="25" src="/assets/bus.png" />
+                    <text class="linesTitle">{{item.title}}{{tools.sub(item.hours,1,2)}}点</text>
+                    <hr class="linesHr" />
+                    <view class="linesBody">
+                        <view class="linesTime">
+                            <text class="linesTimeStart">{{item.timeRange[0]}}</text>
+                            <text class="linesTimeEnd">{{item.timeRange[1]}}</text>
+                        </view>
+                        <van-image class="linesIcon" src="/assets/lineIcon.png" />
+                        <view class="linesDesx">
+                            <text class="linesDesxStart">
+                                {{item.fromA}} - {{item.timeRange[0]}}
+                            </text>
+                            <text class="linesDesxEnd">{{item.fromB}} - {{item.timeRange[1]}}</text>
+                        </view>
+                        <van-icon name="arrow" class="linesArrow" />
+                    </view>
                 </view>
                 <view slot="right" class="swipe-right" bindtap="onClickSelect" data-idx="{{idx}}">
-                    添加车票
+                    选为车票
                 </view>
             </van-swipe-cell>
         </view>

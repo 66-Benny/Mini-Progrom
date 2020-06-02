@@ -172,6 +172,84 @@ hr {
   margin-right: 10%;
   margin-top: 7%;
 }
+.main-lines {
+  background-color: #ffffff;
+  height: 200rpx;
+  position: relative;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+}
+.bus {
+  margin-left: 16rpx;
+  margin-top: 16rpx;
+  display: inline-block;
+}
+.linesTitle {
+  position: relative;
+  top: -15rpx;
+  display: inline-block;
+  font-size: 24rpx;
+  font-weight: 300;
+  color: #424949;
+  left: 12rpx;
+}
+.linesHr {
+  position: absolute;
+  top: 36%;
+  border: 1rpx solid #eaeaea;
+  width: 94%;
+  left: 3%;
+}
+.linesTime {
+  width: 118rpx;
+  display: inline-block;
+}
+.linesTimeStart {
+  font-size: 26rpx;
+  position: absolute;
+  top: 45%;
+  left: 27rpx;
+  color: #424949;
+}
+.linesTimeEnd {
+  font-size: 26rpx;
+  position: absolute;
+  top: 70%;
+  left: 27rpx;
+  color: #424949;
+}
+.linesArrow {
+  color: #eaeaea;
+  float: right;
+  font-weight: 300;
+  margin-right: 7%;
+  margin-top: 7%;
+}
+.linesIcon .van-image {
+  width: 80rpx;
+  display: inline-block;
+  position: absolute;
+  top: 42%;
+  width: 44rpx;
+  height: 108rpx;
+}
+.linesDesx {
+  width: 300rpx;
+  display: inline-block;
+  left: 27%;
+}
+.linesDesxStart {
+  position: absolute;
+  top: 26%;
+  font-size: 28rpx;
+  left: 28%;
+}
+.linesDesxEnd {
+  position: absolute;
+  top: 70%;
+  font-size: 28rpx;
+  left: 28%;
+}
 .button {
   width: 250rpx;
   border-radius: 50rpx;

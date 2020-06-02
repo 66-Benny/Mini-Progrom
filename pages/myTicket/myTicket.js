@@ -28,21 +28,45 @@ Page({
       },
     ],
     tickesArr: {
-      icon: '月票',
-      title: '19号线锦绣',
-      fromA: '锦绣',
-      fromB: 'IBM',
-      month: '',
-      hours: '08:00',
+      // icon: '月票',
+      // title: '19号线锦绣',
+      // fromA: '锦绣',
+      // fromB: 'IBM',
+      // month: '',
+      // hours: '08:00',
     },
-    linesArr: [],
+    linesArr: [
+      {
+        icon: '月票',
+        title: '19号线-锦绣',
+        fromA: '锦绣',
+        fromB: 'IBM',
+        month: '',
+        hours: '08:00',
+        timeRange: ['07:50', '09:00'],
+      },
+      {
+        icon: '月票',
+        title: '27号线-桃源桥',
+        fromA: '桃源桥',
+        fromB: 'IBM',
+        month: '',
+        hours: '08:00',
+        timeRange: ['08:00', '09:00'],
+      },
+    ],
   },
   // PANDA:1159062999014a5acb70
   // PANDA:115906296473a446431d
   // PANDA:115909684963a446431d
   onReady: function () {
     this.getTime()
-    this.getMonth()
+
+    this.setData({
+      tickesArr: this.data.linesArr[0],
+      [`tickesArr.title`]: this.data.linesArr[0].title.replace(/-/, ''),
+      [`tickesArr.month`]: util.formatNumber(new Date().getMonth() + 1),
+    })
   },
   onShow: function () {
     let height = wx.getSystemInfoSync().windowHeight * 2
@@ -114,10 +138,9 @@ Page({
   },
   onClickSelect(event) {
     const index = event.currentTarget.dataset.idx
-    this.data.tickesArr.splice(index, 1)
-    const tickesArrSplice = this.data.tickesArr
     this.setData({
-      tickesArr: tickesArrSplice,
+      tickesArr: this.data.linesArr[index],
+      [`tickesArr.month`]: util.formatNumber(new Date().getMonth() + 1),
     })
   },
 })
