@@ -141,6 +141,7 @@ Page({
     this.setData({
       tickesArr: this.data.linesArr[index],
       [`tickesArr.month`]: util.formatNumber(new Date().getMonth() + 1),
+      _tapSort: 1,
     })
   },
 })
