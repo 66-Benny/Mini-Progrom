@@ -76,7 +76,7 @@ module.exports.sub = sub
     </scroll-view>
 </view>
 <view class="fixedButton">
-    <button class="QRcode button">
+    <button class="QRcode button" bindtap="onClickQRcode">
         <van-icon name="qr" class="qr" />
         乘车码
     </button>

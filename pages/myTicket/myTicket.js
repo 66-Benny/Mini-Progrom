@@ -27,14 +27,7 @@ Page({
         index: 1,
       },
     ],
-    tickesArr: {
-      // icon: '月票',
-      // title: '19号线锦绣',
-      // fromA: '锦绣',
-      // fromB: 'IBM',
-      // month: '',
-      // hours: '08:00',
-    },
+    tickesArr: {},
     linesArr: [
       {
         icon: '月票',
@@ -61,7 +54,6 @@ Page({
   // PANDA:115909684963a446431d
   onReady: function () {
     this.getTime()
-
     this.setData({
       tickesArr: this.data.linesArr[0],
       [`tickesArr.title`]: this.data.linesArr[0].title.replace(/-/, ''),
@@ -142,6 +134,13 @@ Page({
       tickesArr: this.data.linesArr[index],
       [`tickesArr.month`]: util.formatNumber(new Date().getMonth() + 1),
       _tapSort: 1,
+    })
+  },
+  onClickQRcode() {
+    wx.navigateTo({
+      url:
+        '/pages/myQRcode/myQRcode?QRcodeInfo=' +
+        JSON.stringify(this.data.tickesArr),
     })
   },
 })

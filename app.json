@@ -1,5 +1,8 @@
 {
-  "pages": ["pages/myTicket/myTicket"],
+  "pages": [
+    "pages/myTicket/myTicket",
+    "pages/myQRcode/myQRcode"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#006400",
