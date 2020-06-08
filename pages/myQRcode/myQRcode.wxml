@@ -1,2 +1,27 @@
-<!--pages/myQRcode/myQRcode.wxml-->
-<text>pages/myQRcode/myQRcode.wxml</text>
+<wxs module="tools">
+var _substring = function(val){
+    if(val){
+        return val.substring(0, val.lastIndexOf('线')+1);
+    }
+}
+module.exports._substring = _substring
+</wxs>
+<view class="QRcode_header">
+    <text>月票</text>
+</view>
+<view class="QRcode_body">
+    <view class="QRcode_content">
+        <view class="QRcode_time">{{currentTime}}</view>
+        <view class="QRcode_title">
+            {{tools._substring(QRcode.title)}} {{QRcode.month}}月 {{QRcode.icon}} {{QRcode.number}}
+        </view>
+        <view class="QRcode_code">
+            <canvas canvas-id="myQrcode" style="width:{{width}}px; height:{{height}}px"></canvas>
+        </view>
+        <view class="QRcode_name">
+            姓名
+            <text>{{userName}}</text>
+        </view>
+    </view>
+</view>
+<view class="QRcode_footer"></view>

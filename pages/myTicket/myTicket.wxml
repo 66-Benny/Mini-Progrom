@@ -87,8 +87,3 @@ module.exports.sub = sub
 </view>
 <van-action-sheet show="{{ show }}" actions="{{ actions }}" bind:close="onClose" bind:select="onSelectTime" title="选择上班时间" />
 <van-toast id="van-toast" />
-<!-- <view class="myTicket">
-    <image src="/assets/img.jpeg" style="height:{{height}}px;width:{{width}}px" />
-    <view class="time">{{time}}</view>
-    <view class="QRcode" />
-</view> -->

@@ -1,1 +1,84 @@
-/* pages/myQRcode/myQRcode.wxss */
+.QRcode_header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100rpx;
+}
+.QRcode_header text {
+  width: 170rpx;
+  height: 52rpx;
+  background-color: #006400;
+  border-radius: 30rpx;
+  text-align: center;
+  color: #ffffff;
+  line-height: 52rpx;
+  margin-top: 20rpx;
+}
+.QRcode_body {
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+}
+.QRcode_content {
+  background-color: #006400;
+  width: 84%;
+  height: 800rpx;
+}
+.QRcode_time {
+  width: 70%;
+  height: 47rpx;
+  margin-top: 30rpx;
+  line-height: 47rpx;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 12rpx;
+  margin-left: 15%;
+}
+.QRcode_title {
+  width: 70%;
+  color: #ffffff;
+  height: 47rpx;
+  margin-top: 30rpx;
+  text-align: center;
+  line-height: 47rpx;
+  margin-left: 15%;
+  font-size: 24rpx;
+}
+.QRcode_code {
+  width: 70%;
+  height: 55%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+  margin: 30rpx auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.QRcode_code canvas {
+  display: block;
+  margin: 10rpx;
+}
+.QRcode_name {
+  width: 70%;
+  margin-left: 15%;
+  height: 47rpx;
+  margin-top: 50rpx;
+  line-height: 47rpx;
+  color: #ffffff;
+}
+.QRcode_name text {
+  position: relative;
+  left: 22%;
+}
+.QRcode_name text:after {
+  content: '';
+  display: block;
+  width: 280rpx;
+  margin-top: 0rpx;
+  border-bottom: 2rpx solid #fff;
+  left: 10%;
+  position: relative;
+}
+.QRcode_footer {
+}

@@ -36,6 +36,7 @@ Page({
         fromB: 'IBM',
         month: '',
         hours: '08:00',
+        number: '辽BL1370',
         timeRange: ['07:50', '09:00'],
       },
       {
@@ -45,6 +46,7 @@ Page({
         fromB: 'IBM',
         month: '',
         hours: '08:00',
+        number: '辽BL1350',
         timeRange: ['08:00', '09:00'],
       },
     ],
@@ -53,7 +55,7 @@ Page({
   // PANDA:115906296473a446431d
   // PANDA:115909684963a446431d
   onReady: function () {
-    this.getTime()
+    // this.getTime()
     this.setData({
       tickesArr: this.data.linesArr[0],
       [`tickesArr.title`]: this.data.linesArr[0].title.replace(/-/, ''),
@@ -67,14 +69,6 @@ Page({
       height,
       width,
     })
-  },
-  getTime: function () {
-    var that = this
-    setInterval(function () {
-      that.setData({
-        time: util.formatTime(new Date()),
-      })
-    }, 1000)
   },
   onClickTicket: function () {
     this.setData({
